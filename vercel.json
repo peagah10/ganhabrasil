@@ -1,19 +1,20 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/app.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "api/app.py"
-    }
-  ]
-}
++  1 {
++  2   "version": 2,
++  3   "builds": [
++  4     {
++  5       "src": "api/index.py",
++  6       "use": "@vercel/python",
++  7       "config": {
++  8         "maxLambdaSize": "50mb"
++  9       }
++ 10     }
++ 11   ],
++ 12   "routes": [
++ 13     {
++ 14       "src": "/(.*)",
++ 15       "dest": "api/index.py"
++ 16     }
++ 17   ]
++ 18 }
+
+
